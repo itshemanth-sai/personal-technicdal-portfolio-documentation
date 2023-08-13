@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>personal Portfolio Website </title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+    
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(197, 54, 183, 0.492);
+}
+::-webkit-scrollbar-thumb {
+    background: #a1138ed2;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d07bbfd1;
+}
+/* navbar styling */
+nav{
+  position: static;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: 'Ubuntu', sans-serif;
+}
+nav.sticky{
+  background: #874b8728;
+  padding: 13px 0;
+}
+nav .navbar{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;i
+}
+nav .navbar .logo a{
+  font-weight: 500;
+  font-size: 35px;
+  color: #ababab;
+}
+nav.sticky .navbar .logo a{
+  color: rgba(196, 65, 165, 0.901);
+}
+nav .navbar .menu{
+  display: flex;
+  position: relative;
+}
+nav .navbar .menu li{
+  list-style: none;
+  margin: 0 8px;
+}
+.navbar .menu a{
+  font-size: 18px;
+  font-weight: 500;
+  color: #e03c80e8;
+  padding: 6px 0;
+  transition: all 0.4s ease;
+}
+.navbar .menu a:hover{
+  color: #e3448ccb;
+}
+nav.sticky .menu a{
+  color: #ca2c7ee5;
+}
+nav.sticky .menu a:hover{
+  color: #d42f8af0;
+}
+.navbar .media-icons a{
+  color: rgba(194, 57, 100, 0.962);
+  font-size: 18px;
+  margin: 0 6px;
+}
+nav.sticky .media-icons a{
+  color: #c2306df2;
+}
+9
+/* Side Navigation Menu Button CSS */
+nav .menu-btn,
+.navbar .menu .cancel-btn{
+  position: absolute;
+  color: #bf368fb6;
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+nav .menu-btn{
+  color: #d12fa1;
+}
+nav.sticky .menu-btn{
+  color: #cc8ebc;
+}
+.navbar .menu .menu-btn{
+  color: #ec93d9;
+}
+
+/* home section styling */
+.home{
+  height: 100vh;
+  width: 100%;
+  background: url("https://media.istockphoto.com/id/878093686/photo/colorful-sky-and-cloud-in-twilight-background.jpg?s=612x612&w=0&k=20&c=98o0vZBkgPHLEqU-q0iLsva2XoBvuIDmN84i_zaejzk=") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  font-family: 'Ubuntu', sans-serif;
+}
+.home .home-content{
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home .text-one{
+  font-size: 25px;
+  color: #0e0505;
+}
+.home .text-two{
+  color: #110404e4;
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .text-three{
+  font-size: 40px;
+  margin: 5px 0;
+  color: rgb(14, 5, 5);
+}
+.home .button{
+  margin: 14px 0;
+}
+.home .button button{
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #e555bcea;
+  color: #97277d;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+.home .button button:hover{
+  border-color: #a4176c81;
+  background-color: #e56acf;
+  color: #a2376798;
+}
+
+/* About Section Styling */
+/* Those Elements Where We Have Apply Same CSS,
+ I'm Selecting Directly 'Section Tag' and 'Class'  */
+section{
+  padding-top: 40px;
+}
+section .content{
+  width: 80%;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+}
+.about .about-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+section .title span{
+  color: #a02828a6;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+section .title span::before,
+section .title span::after{
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #420431c9;
+  left: 0;
+  bottom: 0;
+}
+section .title span::after{
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about .about-details .left{
+  width: 45%;
+}
+.about .left img{
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.about-details .right{
+  width: 55%;
+}
+section  .topic{
+  color: #4105258e;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.about-details .right p{
+  text-align: justify;
+  color: #a22943ba;
+}
+section .button{
+  margin: 16px 0;
+}
+section .button button{
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #cb6fb88c;
+  color: #efa0d9;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+section .button button:hover{
+  border-color: #aa4b9e8a;
+  background-color: #c46d90;
+  color: #c4525254;
+}
+
+ /* My Skills CSS */
+ .skills{
+   background: #fdf9fc;
+ }
+ .skills .content{
+   padding: 40px 0;
+ }
+ .skills .skills-details{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .skills-details .text{
+   width: 50%;
+ }
+ .skills-details p{
+   color: #0c0c0c;
+   text-align: justify;
+ }
+.skills .skills-details .experience{
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+.skills-details .experience .num{
+  color: #c470abb6;
+  font-size: 80px;
+}
+.skills-details .experience .exp{
+  color: #9a2f88df;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 6px;
+}
+.skills-details .boxes{
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.skills-details .box{
+  width: calc(100% / 2 - 20px);
+  margin: 20px 0;
+}
+.skills-details .boxes .topic{
+  font-size: 20px;
+  color: #8e2c72e0;
+  width: calc(100% / 2 - 20px);
+}
+.skills-details .boxes .per{
+  font-size: 60px;
+  color: #080105d6;
+}
+
+/* My Services CSS */
+.services .boxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.services .boxes .box{
+  margin: 20px 0;
+  width: calc(100% / 3 - 20px);
+  text-align: center;
+  border-radius: 12px;
+  padding: 30px 10px;
+  box-shadow: 0 5px 10px rgba(208, 114, 196, 0.889);
+  cursor: default;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover{
+  background: #d578bdcc;
+  color: #d9a0cd77;
+}
+.services .boxes .box .icon{
+  height: 50px;
+  width: 50px;
+  background: #cb4c706f;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #e072ca;
+  margin: 0 auto 10px auto;
+  transition: all 0.4s ease;
+}
+.boxes .box:hover .icon{
+  background-color: #fff;
+  color: #e06fc4e3;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p{
+  color: #e26ace5d;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p{
+  color: #fff;
+}
+/* Contact Me CSS */
+.contact{
+  background: #e266c134;
+}
+.contact .content{
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.contact .text{
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+/* Footer CSS */
+footer{
+  background: #eb627f16;
+  padding: 15px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+footer .text span{
+  font-size: 17px;
+  font-weight: 400;
+  color: #0c020ae3;
+}
+footer .text span a{
+  font-weight: 500;
+  color: #db6bba5b;
+}
+footer .text span a:hover{
+  text-decoration: underline;
+}
+/* Scroll TO Top Button CSS */
+.scroll-button a{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #c2407ed6;
+  padding: 7px 12px;;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(193, 146, 53, 0.15);
+  display: none;
+}
+
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content{
+    width: 85%;
+  }
+}
+@media (max-width: 1000px) {
+  .about .about-details{
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about .about-details .left{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-details .right{
+    width: 90%;
+    margin: 40px 0;
+  }
+  .services .boxes .box{
+    margin: 20px 0;
+    width: calc(100% / 2 - 20px);
+  }
+}
+@media (max-width: 900px) {
+  .about .left img{
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 750px) {
+  nav .navbar{
+    width: 90%;
+  }
+  nav .navbar .menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: #d552c855;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+  .navbar.active .menu{
+    left: 0;
+  }
+  nav .navbar .menu a{
+    font-size: 23px;
+    display: none;
+    color: #fff;
+    margin: 10px 0;
+  }
+  nav.sticky .menu a:hover{
+    color: #cc5b88cd;
+  }
+  nav .navbar .media-icons{
+    display: none;
+  }
+  nav .menu-btn,
+  .navbar .menu .cancel-btn{
+    display: block;
+  }
+  .home .text-two{
+    font-size: 35px;
+  }
+  .home .text-three{
+    font-size: 35px;
+  }
+  .skills .skills-details{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .skills-details .text{
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .skills-details .boxes{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .services .boxes .box{
+    margin: 20px 0;
+    width: 100%;
+  }
+  .contact .text{
+    width: 100%;
+}
+}
+
+@media (max-width: 500px){
+  .home .text-two{
+    font-size: 55px;
+  }
+  .home .text-three{
+    font-size: 55px;
+  }
+  .skills-details .boxes .per{
+    font-size: 50px;
+    color: #e0609c4d;
+  }
+}  
+</style>
+  </head>
+  <body>
+   
+    <!-- Move to up button -->
+    <div class="scroll-button">
+      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <!-- navgaition menu -->
+    <nav>
+    <a href="https://github.com/itshemanth-sai">
+            <i id="gitHubIcon" class="fab fa-github" style="color: rgba(22, 22, 21, 0.895)"></i>
+          </a>
+      <div class="navbar">
+        <div class="logo"><a href="#">Portfolio.</a></div>
+     <div class="icons">
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times"></i>
+          </div>
+        </ul>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/name_is_hemanth/">
+          <i
+            id="instagramIcon"
+            class="fab fa-instagram"
+            style="color: #b64ea6"
+          ></i>
+        </a>        
+        </div>
+      </div>
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- Home Section Start -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <div class="text">
+          <div class="text-one">Hello,</div>
+          <div class="text-two">I'm Hemanth sai</div>
+          <div class="text-three">UI/UX Designer</div>
+        </div>
+     
+    </section>
+
+    <!-- About Section Start -->
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title"><span>About Me</span></div>
+        <div class="about-details">
+          <div class="left">
+            <img style="height: 300px;" class="rotate" src="https://monsoonsafety.org/wp-content/uploads/2022/07/Purple-Sky-What-Does-It-Mean-Definitive-Guide.jpg" alt=""/>
+          </div>
+          <div class="right">
+            <br><div class="topic">Designing Is My Passion</div></xbr>
+            
+            <p> Hello, My name is G.HEMANTH SAI. I am from Tadepalligudem.Academically, I excel in mathematics and physics. I've always been fascinated by the mysteries of the world and the logic behind difficult problem-solving. From math competitions to scientific experiments, I am constantly looking for ways to push myself and improve my understanding of the universe.
+                My inventiveness is one of my strongest suits. I enjoy expressing myself and discovering new paths of self-expression through digital art, writing, and programming. This creative urge frequently leads me to find novel answers to difficulties, which I believe will be useful in addressing real-world challenges.In my student portfolio, I hope to highlight my academic achievements, creative activities, and extracurricular involvements, providing a full picture of who I am as a person.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Skill Section Start -->
+    <!-- Section Tag and Other Div will same where we need to put same CSS -->
+    <section class="skills" id="skills">x
+      <div class="content">
+        <div class="title"><span>My Skills</span></div>
+        <div class="skills-details">
+          <div class="text">
+            <div class="topic">Skills Reflects Our Knowledge </div>
+            <img style="height: 200px;" class="rotate" src="https://static.vecteezy.com/system/resources/thumbnails/002/227/314/small/learning-new-skills-black-glyph-icon-vector.jpg" alt=""/>
+            <ul style="color: #ba308cd7;">
+            <p>A skill is the learned ability to act with determined results with good execution often within a given amount of time, energy, or both. Skills can often be divided into domain-general and domain-specific skills.</p>
+         <h2>FrontEnd</h2>
+         <img style="height: 200px;" class="rotate" src="https://static.vecteezy.com/system/resources/previews/007/571/212/non_2x/frontend-development-line-icon-vector.jpg" alt=""/>
+        <ul style="color: #0f0909f5;">
+          <li>Languages: HTML, CSS, JavaScript</li>
+          <li>Frameworks/Libraries: Angular, React, Bootstrap</li>
+          <li>Tools/Functionalities:React Query</li>
+        </ul>
+         <h2>BackEnd</h2>
+        <img style="height: 200px" class="rotate" src="https://static.vecteezy.com/system/resources/previews/007/570/850/non_2x/backend-development-line-icon-vector.jpg" alt="" />
+        <ul style="color:hsl(9, 37%, 4%); transform: translateY(-10px)">
+        
+          <li>Language: Php</li>
+          <li>Database: SQL (Entity Framework)</li>
+          <li>API: Queries, Validations</li>
+        </ul>   
+          <div class="boxes">
+            <div class="box">
+              <div class="topic">HTML</div>
+              <div class="per">90%</div>
+            </div><br>
+            <div class="box">
+              <div class="topic">CSS</div>
+              <div class="per">80%</div>
+            </div><br>
+            <div class="box">
+              <div class="topic">JavaScript</div>
+              <div class="per">70%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My projects Section Start -->
+    <section class="services" id="sevices">
+      <div class="content">
+        <div class="title"><span>projects</span></div>
+        <div class="boxes">
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <div class="topic"><h2>personal technical portfolio</h2></div>
+            <p>A portfolio is a living and changing collection of records that reflect your accomplishments, skills, experiences, and attributes. It highlights and showcases samples of some of your best work, along with life experiences, values and achievements.</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="topic">community service project</div>
+            <p>Community Service Project is an experiential learning strategy that. integrates meaningful community service with instruction, participation, learning and community development.</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="topic">Aws cloud computing</div>
+            <p>Amazon Web Services (AWS) is the world's most comprehensive and broadly adopted cloud that includes infrastructure as a service (IaaS) and platform as a service (PaaS) offerings. AWS services offer scalable solutions for compute, storage, databases, analytics, and more.</p>
+          </div>
+        <div class="box">
+            <div class="icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <div class="topic">Icon Design</div>
+            <p>Icon design is the process of designing a graphic symbol that represents some real, fantasy or abstract motive, entity or action. In the context of software applications, an icon often represents a program, a function, data or a collection of data on a computer system.</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <div class="topic">Photography</div>
+            <p>Photography is the art, application, and practice of creating images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film.</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-tablet-alt"></i>
+            </div>
+            <div class="topic">Apps Devlopment</div>
+            <p>Mobile application development is the process of making software for smartphones, tablets and digital assistants, most commonly for the Android and iOS operating systems.</p>
+        </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Me section Start -->
+    <section class="contact" id="contact">
+      <div class="content">
+        <div class="title"><span>Contact Me</span></div>
+        <div class="text">
+          
+        </div>
+      </div>
+    </section>
+    <div class="main-section contact bg-lightgrey">
+      <div class="container">
+        <h2 class="heading-text"><br><br>Get In Touch</h2>
+        <div class="width-100">
+          <form>
+            <input type="text" placeholder="Full Name...">
+            <input type="text" placeholder="Full Email Id...">
+            <input type="text" placeholder="Mobile No...">
+            <input type="text" placeholder="Enter Address..."></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="width-33">
+          <h3>
+            <i class="fa fa-map-marker"></i>
+          </h3>
+          <h4>Address</h4>
+          <p>4-164-16/6,Ganesh nagar,1st ward,venkatarao mastaru veedhi  tadepalligudem, westgodavari</p>
+        </div>
+        <div class="width-33">
+          <h3>
+            <i class="fa fa-phone"></i>
+          </h3>
+          <h4>Phone</h4>
+          <p>+91 9346524477</p>
+        </div>
+        <div class="width-33">
+          <h3>
+            <i class="fa fa-envelope-o"></i>
+          </h3>
+          <h4>Email</h4>
+          <p>nameishemanthsai@gmail.com</p>
+        </div>
+      </div>
+    </div>
+     <!-- Footer Section Start -->
+    <footer>
+      <div class="text">
+        <span>Created By <a href="#"><SPAN>Hemanth</SPAN></a> | &#169; 2023 All Rights Reserved</span>
+      </div>
+    </footer>
+   <script src="script.js"></script>
